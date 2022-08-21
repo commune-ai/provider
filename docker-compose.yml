@@ -1,5 +1,8 @@
+
 version: '3'
+
 services:
+
   provider:
     image: algocean/provider
     build:
@@ -30,7 +33,9 @@ services:
     volumes:
     - ${OCEAN_ARTIFACTS_FOLDER}:/ocean-contracts/artifacts/
     - provider1db:/ocean-provider/db/
-    - ./ocean-provider:/ocean-provider/ocean-provider
+    - ${PWD}/provider/ocean_provider:/ocean-provider/ocean_provider
 
 volumes:
   provider1db:
+
+

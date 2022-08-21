@@ -22,19 +22,16 @@ provider_url = config.get(ConfigSections.RESOURCES, "ocean_provider.url")
 
 logger = logging.getLogger(__name__)
 
-
 @app.before_request
 def log_incoming_request():
+
     logger.info(
-        f"incoming request = {request.scheme}, {request.method}, {request.remote_addr}, {request.full_path}"
+        f"incoming ffg request FUCK broo, WYSSS bro = {request.scheme}, {request.method}, {request.remote_addr}, {request.full_path}"
     )
-
-
 @app.after_request
 def add_header(response):
     response.headers["Connection"] = "close"
     return response
-
 
 @app.errorhandler(Exception)
 def handle_error(error):
@@ -84,7 +81,6 @@ def get_provider_address():
     """Gets the provider wallet address."""
     provider_address = get_provider_wallet().address
     return provider_address
-
 
 def get_version():
     conf = configparser.ConfigParser()

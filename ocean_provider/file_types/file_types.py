@@ -60,5 +60,4 @@ class IpfsFile(EndUrlType, FilesType):
     def get_download_url(self):
         if not os.getenv("IPFS_GATEWAY"):
             raise Exception("No IPFS_GATEWAY defined, can not resolve ipfs hash.")
-
         return urljoin(os.getenv("IPFS_GATEWAY"), urljoin("ipfs/", self.hash))

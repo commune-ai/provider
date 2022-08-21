@@ -3,12 +3,19 @@ PARITY_PASSWORD1=node0
 PARITY_KEYFILE1=/ocean-provider/tests/resources/consumer_key_file.json
 
 PROVIDER_ADDRESS=068ed00cf0441e4829d9784fcbe7b9e26d4bd8d0
-
-NETWORK_URL=wss://rinkeby.infura.io/ws/v3/357f2fe737db4304bd2f7285c5602d0d
-AQUARIUS_URL=https://aquarius.marketplace.dev-ocean.com
+PROVIDER_LOG_LEVEL=DEBUG
+OCEAN_PROVIDER_WORKERS=4
+OCEAN_PROVIDER_TIMEOUT=9000
 OCEAN_PROVIDER_URL=http://0.0.0.0:8030
-OPERATOR_SERVICE_URL=https://operator-api.operator.dev-ocean.com/
 
+NETWORK_RPC_URL=
+
+ARTIFACTS_PATH=/ocean-contracts/artifacts
+ADDRESS_FILE="/ocean-contracts/artifacts/address.json"
+
+
+
+OCEAN_ARTIFACTS_FOLDER=
 AZURE_ACCOUNT_NAME=
 AZURE_ACCOUNT_KEY=
 AZURE_RESOURCE_GROUP=

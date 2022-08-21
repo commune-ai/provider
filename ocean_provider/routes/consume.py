@@ -86,6 +86,8 @@ def fileinfo():
 
     return: list of file info (index, valid, contentLength, contentType)
     """
+
+
     data = get_request_data(request)
     logger.debug(f"fileinfo called. arguments = {data}")
     did = data.get("did")
@@ -97,6 +99,7 @@ def fileinfo():
         files_list = get_service_files_list(service, provider_wallet, asset)
     else:
         files_list = [data]
+
 
     with_checksum = data.get("checksum", False)
 
@@ -112,8 +115,11 @@ def fileinfo():
         info.update(details)
         files_info.append(info)
 
+        logger.info(f'FILE INSTANCE: {file_instance.get_download_url()}, valid: {valid} details: {details}')
+
     response = jsonify(files_info), 200
     logger.info(f"fileinfo response = {response}")
+
 
     return response
 
